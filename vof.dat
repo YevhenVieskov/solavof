@@ -1,0 +1,118 @@
+ BREAK DAM
+ $XPUT                           
+ !  VARIABLE    NUMERICAL VALUE       UNITS            DESCRIPTION             
+ ! ___________  _______________    __________ _________________________________
+   ICYL         =              0, !            MESH GEOMETRY INDICATOR          
+                                  !            =1 FOR CYLINDRICAL COORDINATES   
+                                  !            =0 FOR PLANE COORDINATES         
+   IMOVY        =              0, !            MOVIE INDICATOR                  
+                                  !            =1 FOR MOVIE FILM OUTPUT,        
+                                  !            =0 FOR OTHER FILM OUTPUT         
+   ISURF10      =              0, !            SURFACE TENSION INDICATOR        
+                                  !            =1 FOR SURFACE TENSION,          
+                                  !            =0 FOR NO SURFACE TENSION        
+   ISYMPLT      =              0, !            SYMMETRY PLOT INDICATOR          
+                                  !            =1 FOR SYMMETRY PLOT,            
+                                  !            =0 FOR NO SYMMETRY PLOT          
+   AUTOT        =            0.0, !            AUTOMATIC TIME STEP FLAG         
+                                  !            1.0 FOR AUTOMATIC DELT ADJUSTMENT
+                                  !            0.0 FOR CONSTANT DELT            
+   DELT         = 0.010000000    , !            TIME STEP                                  
+   PLTDT        =            1.0, !            TIME INCREMENT BETWEEN PLOTS     
+                                  !            AND/OR PRINTS TO BE OUTPUTON FILM
+   PRTDT        =  0.1000000    , !            TIME INCR BETWEEN PRINTS ON PAPER
+   TWFIN        =  1.000000    , !            PROBLEM TIME TO END CALCULATION   
+   NMAT         =              1, !            NUMBER OF MATERIALS (1 OR 2)     
+   RHOF         =            1000.0, !            FLUID DENSITY (FOR F=1.0 REGION) 
+   RHOFC        =            1.0, !            FLUID DENSITY (FOR F=0.0 REGION) 
+   NU           =            0.000001, !            COEFFICIENT OF KINEMATIC VISCOSIT
+   SIGMA        =            0.0, !            SURFACE TENSION COEFFICIENT      
+   CANGLE       =  90.000000    , ! DEGREES    CONTACT ANGLE BETWEEN FLUID &WALL
+   CSQ          = -1.0000000    , !            MATERIAL SOUND SPEED SQUARED     
+                                  !            =-1.0 FOR INCOMPRESSIBLE MATERIAL
+   GX           =            0.0, !            BODY ACCELERATION IN POSITIVE X-D
+   GY           = -9.8100000    , !            BODY ACCELERATION IN POSITIVE Y-D
+   WB           =              2, !            INDICATOR FOR BOUNDARY CONDITION 
+                                  !            TO BE USED ALONG THE BOTTOM OF   
+                                  !            THE MESH                         
+                                  !            =1 FOR RIGID FREE-SLIP WALL      
+                                  !            =2 FOR RIGID NO-SLIP WALL,       
+                                  !            =3 FOR CONTINUATIVE BOUNDARY,    
+                                  !            =4 FOR PERIODIC BOUNDARY,        
+                                  !            =5 FOR CONSTANT PRESSURE BOUNDA  
+   WL           =              2, !            INDICATOR FOR LEFT BOUNDARY      
+   WR           =              2, !            INDICATOR FOR RIGHT BOUNDARY     
+   WT           =              2, !            INDICATOR FOR TOP BOUNDARY       
+   FLHT         =            0.0, !            FLUID HEIGHT, IN Y-DIRECTION     
+   UI           = 0.0000000    , !            X-DIRECTION VEL FOR INITIAL MESH 
+   VI           =            0.0, !            Y-DIRECTION VEL FOR INITIAL MESH 
+   VELMX        = 0.00000000    , !            MAXIMUM VELOCITY EXPECTED IN     
+                                  !            PROBLEM, USED TO SCALE VELOCITY  
+                                  !            VECTORS                          
+   NPX          =              0, !            NUMBER OF PART IN X IN RECT SETUP
+   NPY          =              0, !            NUMBER OF PART IN Y IN RECT SETUP
+   XPL          =            0.0, !            LEFT SIDE OF RECT PARTICLE REGION
+   XPR          =            0.0, !            RIGHT SIDE OF RECT PARTICLEREGION
+   YPB          =            0.0, !            BOTT SIDE OF RECT PARTICLE REGION
+   YPT          =            0.0, !            TOP  SIDE OF RECT PARTICLE REGION
+   ALPHA        =            1.0, !            CONTROLS AMOUNT OF DONOR CELL    
+                                  !            FLUXING (=1.0 FOR FULL DONOR CELL
+                                  !            DIFFERENCING, =0.0 FOR CENTRAL   
+                                  !            DIFFERENCING)                    
+   EPSI         = 1.00000000E-03, !            PRESSURE ITERATION CONVERGENCE CR
+   OMG          =  1.7000000    , !            OVER-RELAXATION FACTOR PRESS ITER
+ $END                            
+ $MSHSET                         
+   NKX          =              1, !            NUMBER OF SUBMESH REGIONS IN X-DI
+   XL(1)        =            0.0, !                                             
+   XL(2)        =  1.000000    , !                                             
+                                  !            X-COORDINATE OF THE CONVERGENCE  
+                                  !            LOCATION OF THE LEFT EDGE OF     
+                                  !            SUBMESH N (NKX+1 VALUES OF XL(N) 
+                                  !            ARE NECESSARY BECAUSE THE RIGHT  
+                                  !            EDGE (XR) OF SUBMESH N IS        
+                                  !            DETERMINED BY THE LEFT EDGE OF   
+                                  !            SUBMESH N+1)                     
+                                  !            DIMENSION = MESHX + 1            
+   XC(1)        =  0.5000000    , !                                             
+                                  !            X-COORDINATE OF THE CONVERGENCE  
+                                  !            POINT IN SUBMESH N               
+                                  !            DIMENSION = MESHX                
+   NXL(1)       =             8, !                                             
+                                  !            NUMBER OF CELLS BETWEEN LOCATIONS
+                                  !            XL(N) AND XC(N) IN SUBMESH N     
+                                  !            DIMENSION = MESHX                
+   NXR(1)       =             8, !                                             
+                                  !            NUMBER OF CELLS BETWEEN LOCATIONS
+                                  !            XC(N) AND XL(N+1) IN SUBMESH N   
+                                  !            DIMENSION = MESHX                
+   DXMN(1)      = 0.062500000    , !                                             
+                                  !            MINIMUM SPACE INCREMENT IN       
+                                  !            X-DIRECTION IN SUBMESH N         
+                                  !            DIMENSION = MESHX                
+   NKY          =              1, !            NUMBER OF SUBMESH REGIONS IN Y-DI
+   YL(1)        =            0.0, !                                             
+   YL(2)        =  1.0000000    , !                                             
+                                  !            LOCATION OF THE BOTTOM OF SUBMESH
+                                  !            N (NKY+1 VALUES OF YL(N) ARE     
+                                  !            NECESSARY BECAUSE THE TOP EDGE   
+                                  !            (YR) OF SUBMESH N IS DETERMINED  
+                                  !            BY THE BOTTOM EDGE OF SUBMESH N+1
+                                  !            DIMENSION = MESHY + 1            
+   YC(1)        = 0.50000000    , !                                             
+                                  !            Y-COORDINATE OF THE CONVERGENCE  
+                                  !            POINT IN SUBMESH N               
+                                  !            DIMENSION = MESHY                
+   NYL(1)       =              8, !                                             
+                                  !            NUMBER OF CELLS BETWEEN LOCATIONS
+                                  !            YL(N) AND YC(N) IN SUBMESH N     
+                                  !            DIMENSION = MESHY                
+   NYR(1)       =              8, !                                             
+                                  !            NUMBER OF CELLS BETWEEN LOCATIONS
+                                  !            YC(N) AND YL(N+1) IN SUBMESH N   
+                                  !            DIMENSION = MESHY                
+   DYMN(1)      = 0.06250000    , !                                             
+                                  !            MINIMUM SPACE INCREMENT IN       
+                                  !            Y-DIRECTION IN SUBMESH N         
+                                  !            DIMENSION = MESHY                
+ $END                            
